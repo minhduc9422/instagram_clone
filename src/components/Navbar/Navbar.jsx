@@ -1,5 +1,6 @@
 import { Button, Container, Flex, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { InstagramLogo } from "../../assets/constants";
 
 const Navbar = () => {
   return (
@@ -9,8 +10,7 @@ const Navbar = () => {
         justifyContent={{ base: "center", sm: "space-between" }}
         alignItems={"center"}
       >
-        <Image
-          src="/logo.png"
+        <InstagramLogo
           h={20}
           display={{ base: "none", sm: "block" }}
           cursor={"pointer"}
