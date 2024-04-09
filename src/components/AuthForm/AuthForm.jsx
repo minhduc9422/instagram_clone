@@ -3,7 +3,7 @@ import { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
 import GoogleAuth from "./GoogleAuth";
-import { InstagramLogo } from "../../assets/constants";
+import { InstagramLogo } from "../../../public/assets/constants";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);

@@ -14,7 +14,7 @@ import {
   Tooltip,
   useDisclosure,
 } from "@chakra-ui/react";
-import { SearchLogo } from "../../assets/constants";
+import { SearchLogo } from "../../../public/assets/constants";
 import useSearchUser from "../../hooks/useSearchUser";
 import { useRef } from "react";
 import SuggestedUser from "../SuggestedUsers/SuggestedUser";
