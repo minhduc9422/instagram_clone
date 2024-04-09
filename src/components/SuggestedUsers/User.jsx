@@ -3,7 +3,7 @@ import useFollowUser from "../../hooks/useFollowUser";
 import useAuthStore from "../../store/authStore";
 import { Link } from "react-router-dom";
 
-const SuggestedUser = ({ user, setUser }) => {
+const User = ({ user, setUser }) => {
   const { isFollowing, isUpdating, handleFollowUser } = useFollowUser(user.uid);
   const authUser = useAuthStore((state) => state.user);
 
@@ -54,4 +54,4 @@ const SuggestedUser = ({ user, setUser }) => {
   );
 };
 
-export default SuggestedUser;
+export default User;

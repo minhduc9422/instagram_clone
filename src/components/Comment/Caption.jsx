@@ -1,6 +1,6 @@
 import { Avatar, Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { timeAgo } from "../../utils/timeAgo";
+import { formatPostTime } from "../../utils/formatPostTime";
 import useUserProfileStore from "../../store/userProfileStore";
 
 const Caption = ({ post }) => {
@@ -21,7 +21,7 @@ const Caption = ({ post }) => {
           <Text fontSize={14}>{post.caption}</Text>
         </Flex>
         <Text fontSize={12} color={"gray"}>
-          {timeAgo(post.createdAt)}
+          {formatPostTime(post.createdAt)}
         </Text>
       </Flex>
     </Flex>

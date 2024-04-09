@@ -9,7 +9,7 @@ const Post = ({ post }) => {
   return (
     <>
       <PostHeader post={post} creatorProfile={userProfile} />
-      <Box my={2} borderRadius={4} overflow={"hidden"}>
+      <Box borderRadius={4} overflow={"hidden"}>
         <Image src={post.imageURL} alt={"FEED POST IMG"} />
       </Box>
       <PostFooter post={post} creatorProfile={userProfile} />

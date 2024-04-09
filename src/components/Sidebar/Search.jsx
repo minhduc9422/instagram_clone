@@ -17,7 +17,7 @@ import {
 import { SearchLogo } from "../../assets/constants";
 import useSearchUser from "../../hooks/useSearchUser";
 import { useRef } from "react";
-import SuggestedUser from "../SuggestedUsers/SuggestedUser";
+import User from "../SuggestedUsers/User";
 
 const Search = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -63,7 +63,7 @@ const Search = () => {
             <form onSubmit={handleSearchUser}>
               <FormControl>
                 <FormLabel>Username</FormLabel>
-                <Input placeholder="asaprogrammer" ref={searchRef} />
+                <Input placeholder="asaprogrammer" ref={searchRef} autoFocus />
               </FormControl>
 
               <Flex w={"full"} justifyContent={"flex-end"}>
@@ -78,7 +78,7 @@ const Search = () => {
                 </Button>
               </Flex>
             </form>
-            {user && <SuggestedUser user={user} setUser={setUser} />}
+            {user && <User user={user} setUser={setUser} />}
           </ModalBody>
         </ModalContent>
       </Modal>

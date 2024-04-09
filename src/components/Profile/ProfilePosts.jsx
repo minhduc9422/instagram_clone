@@ -1,5 +1,5 @@
 import { Box, Flex, Grid, Skeleton, Text, VStack } from "@chakra-ui/react";
-import ProfilePost from "./ProfilePost";
+import Post from "./Post";
 import useGetUserPosts from "../../hooks/useGetUserPosts";
 
 const ProfilePosts = () => {
@@ -29,7 +29,7 @@ const ProfilePosts = () => {
       {!isLoading && (
         <>
           {posts.map((post) => (
-            <ProfilePost post={post} key={post.id} />
+            <Post post={post} key={post.id} />
           ))}
         </>
       )}

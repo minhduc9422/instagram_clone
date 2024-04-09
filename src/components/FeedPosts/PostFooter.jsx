@@ -17,7 +17,7 @@ import {
 import usePostComment from "../../hooks/usePostComment";
 import useAuthStore from "../../store/authStore";
 import useLikePost from "../../hooks/useLikePost";
-import { timeAgo } from "../../utils/timeAgo";
+import { formatPostTime } from "../../utils/formatPostTime";
 import CommentsModal from "../Modals/CommentsModal";
 
 const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
@@ -54,7 +54,7 @@ const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 
       {isProfilePage && (
         <Text fontSize="12" color={"gray"}>
-          Posted {timeAgo(post.createdAt)}
+          Posted {formatPostTime(post.createdAt)}
         </Text>
       )}
 

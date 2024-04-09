@@ -29,7 +29,7 @@ import { arrayRemove, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import usePostStore from "../../store/postStore";
 import Caption from "../Comment/Caption";
 
-const ProfilePost = ({ post }) => {
+const Post = ({ post }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const userProfile = useUserProfileStore((state) => state.userProfile);
   const authUser = useAuthStore((state) => state.user);
@@ -200,4 +200,4 @@ const ProfilePost = ({ post }) => {
   );
 };
 
-export default ProfilePost;
+export default Post;

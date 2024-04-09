@@ -29,6 +29,7 @@ const Signup = () => {
         size={"sm"}
         value={inputs.email}
         onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
+        autoFocus
       />
       <Input
         placeholder="Username"
