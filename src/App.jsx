@@ -1,28 +1,63 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
-import AuthPage from "./pages/AuthPage/AuthPage";
-import PageLayout from "./Layouts/PageLayout/PageLayout";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "./firebase/firebase";
+import { lazy, Suspense } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
+import FirebaseState from "./context/FirebaseState";
+import LoadPhotogram from "./components/loading/LoadPhotogram";
+
+const Login = lazy(() => import("./pages/login/Login"));
+const Signup = lazy(() => import("./pages/signup/Signup"));
+const Home = lazy(() => import("./pages/home/Home"));
+const Explore = lazy(() => import("./pages/explore/Explore"));
+const Profile = lazy(() => import("./pages/profile/Profile"));
+const ForgotPassword = lazy(() =>
+  import("./pages/forgotPassword/ForgotPassword")
+);
+const Verification = lazy(() => import("./pages/verification/Verification"));
 
 function App() {
-  const [authUser] = useAuthState(auth);
+  const authUser = JSON.parse(localStorage.getItem("authUser"));
+
+  const PrivateRoutes = () => {
+    return authUser ? <Outlet /> : <Navigate to="/" />;
+  };
 
   return (
-    <PageLayout>
-      <Routes>
-        <Route
-          path="/"
-          element={authUser ? <HomePage /> : <Navigate to="/auth" />}
-        />
-        <Route
-          path="/auth"
-          element={!authUser ? <AuthPage /> : <Navigate to="/" />}
-        />
-        <Route path="/:username" element={<ProfilePage />} />
-      </Routes>
-    </PageLayout>
+    <>
+      <FirebaseState>
+        <BrowserRouter>
+          <Suspense fallback={<LoadPhotogram />}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  authUser === null ? (
+                    <Navigate to="/login" replace />
+                  ) : (
+                    <Home />
+                  )
+                }
+              />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/__/auth/action" element={<Verification />} />
+
+              {/* private routes */}
+              <Route element={<PrivateRoutes />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/explore" element={<Explore />} />
+                <Route path="/profile/:username" element={<Profile />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </FirebaseState>
+    </>
   );
 }
 

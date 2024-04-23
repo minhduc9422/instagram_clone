@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer" />
-    <title>Instagram Clone</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- google site verificaton data -->
+    <meta
+      name="google-site-verification"
+      content="6GLphjkiwgZSMWrEjvYPJ2qrMCNKGCv6SeVPC04kbto"
+    />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NCXRJPD4");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Primary Meta Tags -->
+    <title>Okv Photogram</title>
+    <meta name="title" content="Okv Photogram" />
+    <meta name="author" content="Onamkrverma" />
+    <meta
+      name="keywords"
+      content="Okv Photogram, Photogram, instagram, Onam kumar verma, Onamkrverma"
+    />
+    <meta
+      name="description"
+      content="Okv Photogram is a web application that allows users to share their photos, comment and like others' posts, and follow other users' profiles. It is inspired by Instagram's features."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://okv-photogram.netlify.app/" />
+    <meta property="og:title" content="Okv Photogram" />
+    <meta
+      property="og:description"
+      content="Okv Photogram is a web application that allows users to share their photos, comment and like others' posts, and follow other users' profiles. It is inspired by Instagram's features.
+"
+    />
+    <meta property="og:image" content="/images/photogram-logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://okv-photogram.netlify.app/" />
+    <meta property="twitter:title" content="Okv Photogram" />
+    <meta
+      property="twitter:description"
+      content="Okv Photogram is a web application that allows users to share their photos, comment and like others' posts, and follow other users' profiles. It is inspired by Instagram's features."
+    />
+    <meta property="twitter:image" content="/images/photogram-logo.png" />
+
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
   </head>
+
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NCXRJPD4"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>
