@@ -73,7 +73,7 @@ const PostCard = ({ post, postId, setAlertMessage }) => {
 
   const handleShare = async (username, caption) => {
     const shareData = {
-      title: "Okv Photogram",
+      title: "Instagram",
       text: `One amazing post is posted by "${username}" with caption: "${caption}", visit given link to view`,
       url: window.location.href,
     };

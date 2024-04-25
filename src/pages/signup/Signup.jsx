@@ -96,17 +96,15 @@ const Signup = () => {
               <div className="google-auth">
                 <p>Sign up to see photos and videos from your friends.</p>
                 <button
-                  disabled={invalid}
                   type="submit"
-                  className="google-button cur-point"
-                  style={{ opacity: (invalid || loading) && "0.5" }}
+                  className="google-button-signup cur-point"
                 >
                   Log in with Google
                 </button>
-                <div class="page-break">
-                  <div class="line"></div>
-                  <span class="text">OR</span>
-                  <div class="line"></div>
+                <div className="page-break">
+                  <div className="line"></div>
+                  <span className="text">OR</span>
+                  <div className="line"></div>
                 </div>
               </div>
               <form className="login-form" onSubmit={handleSubmit}>

@@ -54,6 +54,11 @@
   margin: 0 5px;
 }
 
+.instagram-logo {
+  height: 51px;
+  width: 175px;
+}
+
 /* responsive for mobile */
 @media (max-width: 426px) {
   .explore-section {

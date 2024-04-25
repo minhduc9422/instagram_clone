@@ -82,7 +82,7 @@ const Verification = () => {
 
   return (
     <div className="form-container absolute-center">
-      <div className="photogram-logo">Okv Photogram</div>
+      <img src="\logo.png" alt="logo" className="instagram-logo" />
       {mode === "resetPassword" ? (
         <form
           className="form-wrapper absolute-center"

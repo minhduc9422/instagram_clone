@@ -20,6 +20,19 @@
   width: 80%;
 }
 
+.google-button-signup {
+  display: block;
+  width: 100%;
+  background-color: var(--primary-btn-bg);
+  border: none;
+  border-radius: 4px;
+  padding: 7px 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 @media (max-width: 426px) {
   .confirm-email-image-wrapper {
     max-height: 125px;
