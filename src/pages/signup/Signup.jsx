@@ -6,9 +6,9 @@ import firebaseContex from "../../context/FirebaseContex";
 import { db, auth } from "../../config/FirebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
 import usernameChecker from "./UsernameCheker";
-import { sendEmailVerification, updateProfile } from "firebase/auth";
 import Loading from "../../components/loading/Loading";
 import { RiMailSendFill } from "react-icons/ri";
+import GoogleLogin from "../login/GoogleLogin";
 
 const Signup = () => {
   const { signup } = useContext(firebaseContex);
@@ -95,18 +95,11 @@ const Signup = () => {
             <div className="login-form-wrapper">
               <div className="google-auth">
                 <p>Sign up to see photos and videos from your friends.</p>
-                <button
-                  disabled={invalid}
-                  type="submit"
-                  className="google-button cur-point"
-                  style={{ opacity: (invalid || loading) && "0.5" }}
-                >
-                  Log in with Google
-                </button>
-                <div class="page-break">
-                  <div class="line"></div>
-                  <span class="text">OR</span>
-                  <div class="line"></div>
+                <GoogleLogin />
+                <div className="page-break">
+                  <div className="line"></div>
+                  <span className="text">OR</span>
+                  <div className="line"></div>
                 </div>
               </div>
               <form className="login-form" onSubmit={handleSubmit}>

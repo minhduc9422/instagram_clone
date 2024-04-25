@@ -1,6 +1,5 @@
 import { sendEmailVerification } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
-import { FaFacebookSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Loading from "../../components/loading/Loading";
 import { auth } from "../../config/FirebaseConfig";
@@ -8,6 +7,7 @@ import firebaseContex from "../../context/FirebaseContex";
 import "./Login.css";
 import "../signup/Signup.css";
 import { RiMailSendFill } from "react-icons/ri";
+import handleGoogleLogin from "./GoogleLogin";
 
 const Login = () => {
   const { login, facebookLogin } = useContext(firebaseContex);
@@ -99,9 +99,6 @@ const Login = () => {
                     required
                   />
                 </div>
-                <div className="forgot-wrapper">
-                  <Link to="/forgot-password">Forgot password?</Link>
-                </div>
 
                 <div className="button-wrapper ">
                   <button
@@ -116,23 +113,21 @@ const Login = () => {
                 </div>
               </form>
               {errorMessage && <p className="errorMessage">{errorMessage}</p>}
-              <div className="seprator">OR</div>
-              <div className="facebook-login-wrapper">
-                <button
-                  type="button"
-                  disabled={true}
-                  className="facebook-login-btn login-button cur-point align-center"
+              <div className="page-break">
+                <div className="line"></div>
+                <span className="text">OR</span>
+                <div className="line"></div>
+              </div>
+              <div className="google-auth">
+                <Link
+                  onClick={handleGoogleLogin}
+                  className="google-button-login cur-point"
                 >
-                  <span className="facebook-icon">
-                    <FaFacebookSquare
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </span>
-                  Login with facebook
-                </button>
-                <small className="alert-message">
-                  Facebook logins have some issues currently.
-                </small>
+                  Log in with Google
+                </Link>
+              </div>
+              <div className="forgot-wrapper">
+                <Link to="/forgot-password">Forgot password?</Link>
               </div>
             </div>
           ) : (
